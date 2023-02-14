@@ -1,8 +1,5 @@
 package com.mgmoura.helpdesk.resources.exceptions;
 
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.http.HttpStatus;
