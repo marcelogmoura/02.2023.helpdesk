@@ -40,7 +40,7 @@ public class DBService {
 		Cliente cli4 = new Cliente(null, "Zeca Gomes", "52977716688", "zeca@email.com", "012");
 		Cliente cli5 = new Cliente(null, "Ozzy Osbourne", "41142587797", "oz@email.com", "012");
 		
-		Chamado c1 = new Chamado(null, Prioridade.MEDIA	, Status.ANDAMENTO, "Chamado #01", "Teste chamado 1", tec2, cli1);
+		Chamado c1 = new Chamado(null, Prioridade.MEDIA	, Status.ANDAMENTO, "Chamado #01", "Teste chamado 1", tec2, cli4);
 		Chamado c2 = new Chamado(null, Prioridade.ALTA	, Status.ABERTO, "Chamado #02", "Teste chamado 2", tec2, cli2);
 		Chamado c3 = new Chamado(null, Prioridade.BAIXA	, Status.ENCERRADO, "Chamado #03", "Teste chamado 3", tec3, cli3);
 		Chamado c4 = new Chamado(null, Prioridade.ALTA	, Status.ABERTO, "Chamado #04", "Teste chamado 4", tec4, cli4);
