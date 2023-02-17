@@ -1,5 +1,6 @@
 package com.mgmoura.helpdesk.services;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -40,6 +41,13 @@ public class ChamadoService {
 		return repository.save(newChamado(objDTO));
 	}
 	
+	public Chamado update(Integer id, @Valid ChamadoDTO objDTO) {
+		objDTO.setId(id);
+		Chamado oldObj = findById(id);
+		oldObj = newChamado(objDTO);
+		return repository.save(oldObj);
+	}
+	
 	private Chamado newChamado(ChamadoDTO obj) {
 		Tecnico tecnico = tecnicoService.findById(obj.getTecnico());
 		Cliente cliente = clienteService.findById(obj.getCliente());
@@ -48,6 +56,12 @@ public class ChamadoService {
 		if(obj.getId() != null) {
 			chamado.setId(obj.getId());
 		}
+		
+		if(obj.getStatus().equals(2)) {
+			chamado.setDataFechamento(LocalDate.now());
+			
+		}
+		
 		chamado.setTecnico(tecnico);
 		chamado.setCliente(cliente);
 		chamado.setPrioridade(Prioridade.toNum(obj.getPrioridade()));
@@ -56,5 +70,9 @@ public class ChamadoService {
 		chamado.setObservacoes(obj.getObservacoes());
 		return chamado;
 	}
+
+
+
+
 
 }
