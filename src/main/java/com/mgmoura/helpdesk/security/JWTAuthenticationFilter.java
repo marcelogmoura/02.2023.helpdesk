@@ -21,10 +21,10 @@ import com.mgmoura.helpdesk.dtos.CredenciaisDTO;
 public class JWTAuthenticationFilter extends UsernamePasswordAuthenticationFilter{
 	
 	private AuthenticationManager authenticationManager;
-	private JwtUtil jwtUtil;
+	private JWTUtil jwtUtil;
 	
 	
-	public JWTAuthenticationFilter(AuthenticationManager authenticationManager, JwtUtil jwtUtil) {
+	public JWTAuthenticationFilter(AuthenticationManager authenticationManager, JWTUtil jwtUtil) {
 		super();
 		this.authenticationManager = authenticationManager;
 		this.jwtUtil = jwtUtil;
